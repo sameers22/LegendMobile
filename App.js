@@ -39,8 +39,8 @@ export default function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser && currentUser.emailVerified) {
-        setUser(currentUser); // ✅ Only verified users are considered "logged in"
+      if (currentUser && (currentUser.emailVerified || currentUser.isAnonymous)) {
+        setUser(currentUser); // ✅ allow anonymous too
       } else {
         setUser(null);
       }

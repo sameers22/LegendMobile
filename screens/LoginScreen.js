@@ -55,7 +55,7 @@ const LoginScreen = ({ navigation }) => {
   const handleAnonymousLogin = async () => {
     try {
       await signInAnonymously(auth);
-      // Navigate to home
+      // ✅ Don't manually navigate — App.js will detect and show Home
     } catch (error) {
       Alert.alert('Error', error.message);
     }
