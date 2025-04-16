@@ -30,7 +30,6 @@ const LoginScreen = ({ navigation }) => {
       if (user.emailVerified) {
         Alert.alert('Success', 'Logged in successfully!');
         // Navigate to home
-        navigation.replace('Home');
       } else {
         Alert.alert('Email Not Verified', 'Please verify your email before logging in.');
       }
@@ -56,9 +55,7 @@ const LoginScreen = ({ navigation }) => {
   const handleAnonymousLogin = async () => {
     try {
       await signInAnonymously(auth);
-      Alert.alert('Guest Login', 'You are now logged in as a guest.');
       // Navigate to home
-      navigation.replace('Home');
     } catch (error) {
       Alert.alert('Error', error.message);
     }
