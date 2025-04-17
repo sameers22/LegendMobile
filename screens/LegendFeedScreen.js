@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-const TableBookingScreen = () => {
+const LegendFeedScreen = () => {
   return (
     <View style={styles.container}>
       <WebView
@@ -17,10 +17,10 @@ const TableBookingScreen = () => {
                 <script src="https://static.elfsight.com/platform/platform.js" async></script>
               </head>
               <body style="margin:0;padding:0;">
-                <div class="elfsight-app-f601f47a-8895-4c01-961a-01d50bbfde6a" data-elfsight-app-lazy></div>
+                <div class="elfsight-app-4a02618e-1c41-4814-b02f-81c712f539d3" data-elfsight-app-lazy></div>
               </body>
             </html>
-          `
+          `,
         }}
       />
     </View>
@@ -28,9 +28,7 @@ const TableBookingScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  container: { flex: 1 },
 });
 
-export default TableBookingScreen;
+export default LegendFeedScreen;

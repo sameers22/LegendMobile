@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebaseConfig'; // make sure this path is correct
+import LegendVideosScreen from './screens/LegendVideosScreen';
+import LegendFeedScreen from './screens/LegendFeedScreen';
 
 // Screens
 import PayScreen from './screens/PayScreen';
@@ -30,6 +32,8 @@ const MainDrawer = () => (
     <Drawer.Screen name="Sauces" component={SaucesScreen} />
     <Drawer.Screen name="Franchise" component={FranchiseScreen} />
     <Drawer.Screen name="Account" component={AccountScreen} />
+    <Drawer.Screen name="Legend Videos" component={LegendVideosScreen} />
+    <Drawer.Screen name="Legend Feed" component={LegendFeedScreen} />
   </Drawer.Navigator>
 );
 
