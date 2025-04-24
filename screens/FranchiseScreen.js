@@ -1,20 +1,55 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 const FranchiseScreen = () => {
+  const injectedCSS = `
+    const style = document.createElement('style');
+    style.innerHTML = \`
+      body, html {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+      }
+
+      /* Move content up to hide top nav */
+      body {
+        position: relative;
+        top: -120px; /* adjust this value until header disappears */
+      }
+
+      header, nav, .header, .topbar, .sidebar, footer {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+      }
+    \`;
+    document.head.appendChild(style);
+  `;
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Franchise Page</Text>
+      <WebView
+        source={{ uri: 'https://legendfranchise.com' }}
+        injectedJavaScript={injectedCSS}
+        javaScriptEnabled
+        domStorageEnabled
+        startInLoadingState
+        renderLoading={() => (
+          <ActivityIndicator size="large" color="#ffcc00" style={styles.loader} />
+        )}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff',
-  },
-  text: {
-    fontSize: 24, fontWeight: 'bold', color: '#333',
+  container: { flex: 1 },
+  loader: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: [{ translateX: -25 }, { translateY: -25 }],
   },
 });
 

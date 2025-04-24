@@ -28,11 +28,9 @@ const MainDrawer = () => (
     <Drawer.Screen name="Home" component={HomeScreen} />
     <Drawer.Screen name="Menu" component={MenuScreen} />
     <Drawer.Screen name="Table Booking" component={TableBookingScreen} />
-    <Drawer.Screen name="Event Booking" component={EventBookingScreen} />
     <Drawer.Screen name="Sauces" component={SaucesScreen} />
     <Drawer.Screen name="Franchise" component={FranchiseScreen} />
     <Drawer.Screen name="Account" component={AccountScreen} />
-    <Drawer.Screen name="Legend Videos" component={LegendVideosScreen} />
     <Drawer.Screen name="Legend Feed" component={LegendFeedScreen} />
   </Drawer.Navigator>
 );

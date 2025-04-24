@@ -92,6 +92,36 @@ const HomeScreen = () => {
               </View>
             </View>
 
+                    {/* Google Maps Embed */}
+        <View style={styles.mapWrapper}>
+          <WebView
+            originWhitelist={['*']}
+            style={styles.map}
+            source={{
+              html: `
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <style>body, html { margin: 0; padding: 0; }</style>
+                  </head>
+                  <body>
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189.12291551076032!2d-73.80296798584818!3d40.67470380960766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2672388b8efd1%3A0x845e0126ebd0b8b!2sLegend%20Cookhouse!5e0!3m2!1sen!2sus!4v1741354079338!5m2!1sen!2sus"
+                      width="100%"
+                      height="450"
+                      style="border:0;"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </body>
+                </html>
+              `,
+            }}
+          />
+        </View>
+
             {/* ✅ Reviews Widget WebView */}
             <View style={styles.reviewWrapper}>
               <WebView
@@ -175,22 +205,36 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   menuButton: {
-    backgroundColor: 'yellow',
+    backgroundColor: 'transparent',
+    borderColor: '#fff',
+    borderWidth: 2,
     paddingVertical: 12,
     paddingHorizontal: 30,
-    borderRadius: 25,
+    borderRadius: 15,
     elevation: 3,
   },
   menuButtonText: {
     fontWeight: 'bold',
-    fontSize: 16,
-    color: '#000',
+    fontSize: 26,
+    color: '#fff',
+    textAlign: 'center',
   },
   reviewWrapper: {
     width: '100%',
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0.6)',
     marginBottom: 40,
+  },
+  mapWrapper: {
+    height: 450,
+    width: '100%',
+    borderRadius: 8,
+    overflow: 'hidden',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+  },
+  map: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.6)',
   },
 });
 
