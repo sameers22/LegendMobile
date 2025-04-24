@@ -68,7 +68,7 @@ export default function App() {
             <Stack.Screen name="Register" component={RegisterScreen} />
           </>
         ) : (
-          <Stack.Screen name="Home" component={MainDrawer} />
+          <Stack.Screen name="Main" component={MainDrawer} />
         )}
       </Stack.Navigator>
     </NavigationContainer>
