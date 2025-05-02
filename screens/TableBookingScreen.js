@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 const TableBookingScreen = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+          <View style={styles.innerContainer}>
       <WebView
         originWhitelist={['*']}
         style={{ flex: 1 }}
@@ -24,12 +25,18 @@ const TableBookingScreen = () => {
         }}
       />
     </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000', // optional, set your background
+  },
+  innerContainer: {
+    flex: 1,
+    paddingTop: 10, // adjust padding as needed
   },
 });
 

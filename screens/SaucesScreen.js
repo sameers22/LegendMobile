@@ -11,6 +11,7 @@ import {
   Modal,
   Pressable,
   Dimensions,
+  SafeAreaView
 } from 'react-native';
 import { fetchProducts } from '../shopify';
 import { useCart } from '../contexts/CartContext';

@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useCart } from '../contexts/CartContext';
 import { useNavigation } from '@react-navigation/native';
-import { Linking } from 'react-native';
+import { SafeAreaView, Linking } from 'react-native';
 import { createCheckout } from '../shopify'; // ✅ adjust the path to where your Shopify file is
 
 
