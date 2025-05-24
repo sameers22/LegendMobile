@@ -23,6 +23,9 @@ import LegendFeedScreen from './screens/LegendFeedScreen';
 import CartScreen from './screens/CartScreen';
 import CheckoutWeb from './screens/CheckoutWeb';
 
+import MenuListScreen from './screens/MenuListScreen';
+
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -84,6 +87,7 @@ export default function App() {
               <>
                 <Stack.Screen name="Main" component={MainDrawer} />
                 <Stack.Screen name="CheckoutWeb" component={CheckoutWeb} />
+                <Stack.Screen name="MenuList" component={MenuListScreen} />
               </>
             )}
           </Stack.Navigator>
